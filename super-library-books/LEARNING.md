@@ -178,7 +178,7 @@ but, it is worth to mention what I am experimenting.
 
 The _pom.xml_ file is not recognizing some plugins and the maven.home. Here is a pic about it.
 
-_Image about it_
+![Maven_issue](https://github.com/mdyagual/supa_library/blob/main/imgs/Maven_Issue.JPG)
 
 I read a lot of possible solutions but until now (24/5/2023) I didn't make it work. I hope in the future solve it and
 share the solution in this section.
