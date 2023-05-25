@@ -135,7 +135,8 @@ order to not interact in the service layer/folder with _EntityManager_. I consid
 
 Something that I notice is the absence of a main method for retrieve all the registers. I had to use _.createQuery()_ to wrote it. Plus, while coding this
 an issue appears related to "QuerySyntaxException". Googling a bit, I discovered that "SELECT * FROM books;" was invalid for the '*' and maybe the ';'. 
-Nothing related to SQL main syntax that you typical use, it was more for this approach inside java code. So, I have to replace it for "SELECT b from Book b".
+Nothing related to SQL main syntax that you typical use, it was more for this approach inside java code. So, I have to replace it for "SELECT b from Book b" when 'Book' is the name
+of the class using @Entity.
 
 ## 4. Custom Id Generator config.
 When I have to set up the @Entity class, I remember why I don't like relational dbs: Primary key sequence configuration with @GeneratedValue.
@@ -144,7 +145,7 @@ I'm not a fan of my primary key being Long type, so I always look to customize i
 
 For that I generate _IdGenerator.java_ in _config_ layer/folder. What was coded is the main configuration to generate a string-unique primary key.
 
-After than, the tricky starts to come out:
+After that, an issue started to come out:
 
 ```
 @GeneratedValue(generator = "custom_id_generator")
