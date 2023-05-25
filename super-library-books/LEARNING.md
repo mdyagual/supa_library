@@ -98,13 +98,13 @@ The situation was when I'm trying to run the microservice I got this error messa
 Couldn't find type javax.enterprise.context.ApplicationScoped. Are you missing a dependency on your classpath?
 ```
 
-The solution? In the _BookMapper.java_, instead of "cdi"
+The solution? In the _BookMapper.java_, instead of "cdi",
 
 ```
 @Mapper(componentModel = "cdi", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 ```
 
-Change it for "jakarta"
+Change it for "jakarta".
 
 ```
 @Mapper(componentModel = "jakarta", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
@@ -154,7 +154,7 @@ name = "custom_id_generator",
 strategy = "ec.com.books.library.supa.config.IdGenerator")
 ```
 
-When in @GenericGenerator the IDE told me that the 'strategy' option is depreciated: Doing a lil of research, I found that it was renamed to 'type'. So, 
+In @GenericGenerator the IDE told me that the 'strategy' option is depreciated: Doing a lil of research, I found that it was renamed to 'type'. So, 
 I did the change but, I also have to configure something new called parameters in order to use my IdGenerator class. And the cherry cake of all this was to
 search what to set in 'type'.
 
@@ -173,8 +173,7 @@ So, with all the changes, the result was:
 
 # Extras
 ## Maven compiler.
-I'm not considering this as an issue because the microservices runs normally 
-but, it is worth to mention what I am experimenting. 
+I'm not considering this as an issue because the microservice runs normally but, it is worth to mention what I am experimenting. 
 
 The _pom.xml_ file is not recognizing some plugins and the maven.home. Here is a pic about it.
 
