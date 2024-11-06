@@ -10,6 +10,7 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @ApplicationScoped
@@ -19,7 +20,7 @@ public class BookService {
 
 
     public List<BookDTO> getALl(){
-        return repository.findAll().stream().map(mapper::toDto).toList();
+        return repository.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
     }
 
 
